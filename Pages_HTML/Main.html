@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<HTML lang = "fr">
+    <head>
+        <TITLE> Main </TITLE>
+        <meta charset="utf-8">
+        <meta http-equiv=\"refresh\" content=\"20\" />
+    </head>
+    <BODY id = body>
+        <!--Contenu textuel de la page main-->
+        <h1>Bienvenue sur <a id = title></a>.html</h1>
+        <p>Aujourd'hui nous sommes le : <a id = "date"> testdate</a>
+        <p>Et il est actuellement : <a id = "time"> testheure </a>
+        <p><img id = "image" alt="The place the image should be" src ='https://sportandspinalphysio.com.au/wp-content/uploads/2019/03/hand-with-thumb-up.jpg'/></p>
+        <p>Vous pouvez essayer d'acceder au fichier Contenu.html</p>
+        <!--Bouttons sur la page -->
+        <button onclick="changeColor('blue');">blue</button>
+        <button onclick="changeColor('red');">red</button>
+        <button onclick="changeColor('black');">black</button>
+        <!--Javascript-->
+        <script type="text/javascript">
+            //script date/heure
+            var today = new Date();
+            var date = today.getDate() + "/" + (today.getMonth()+1) + "/" + today.getFullYear();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            //Modification des éléments aux différentes ids
+            document.getElementById('date').innerHTML = date
+            document.getElementById('time').innerHTML = time
+            document.getElementById('title').innerHTML = document.title
+            //Fonction change color
+            function changeColor(newColor) {
+                var elem = document.getElementById('body');
+                elem.style.color = newColor;
+            }
+        </script>
+    </BODY>
+</HTML>
